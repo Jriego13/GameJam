@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gltfFiles/tileHigh_forest.gltf.glb" type="PackedScene" id=1]
+
+[node name="tileHigh_forestgltf" instance=ExtResource( 1 )]

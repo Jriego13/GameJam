@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gltfFiles/tree_forest.gltf.glb" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+height = 2.76437
+radius = 0.7
+
+[node name="tree_forestgltf" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1.67959, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="." index="1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00382769, 1.44895, -0.00467418 )
+shape = SubResource( 1 )
