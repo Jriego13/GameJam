@@ -6,7 +6,7 @@ onready var animPlayer = get_node("../character_duck/KayKit_AnimatedCharacter_v1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	var animations = ["Run" , "Idle" ]
+	var animations = ["Run" , "Idle", "Jump" ]
 	for animation in animations:
 		animation = animPlayer.get_animation(animation)
 		animation.loop = true

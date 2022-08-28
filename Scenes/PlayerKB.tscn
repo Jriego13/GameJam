@@ -21,6 +21,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=7]
 switch_mode = 2
+priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
 
@@ -28,17 +29,18 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
 switch_mode = 2
+priority = 2
 
 [sub_resource type="AnimationNodeStateMachine" id=11]
 states/Idle/node = SubResource( 2 )
 states/Idle/position = Vector2( 614, 52 )
 states/Jump/node = SubResource( 3 )
-states/Jump/position = Vector2( 768, 209 )
+states/Jump/position = Vector2( 768, 208 )
 states/Run/node = SubResource( 4 )
 states/Run/position = Vector2( 451, 214 )
 transitions = [ "Run", "Idle", SubResource( 5 ), "Idle", "Run", SubResource( 6 ), "Idle", "Jump", SubResource( 7 ), "Jump", "Idle", SubResource( 8 ), "Jump", "Run", SubResource( 9 ), "Run", "Jump", SubResource( 10 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -25, -67 )
+graph_offset = Vector2( -72, 1 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
@@ -51,23 +53,31 @@ script = ExtResource( 2 )
 
 [node name="character_duck" parent="." instance=ExtResource( 1 )]
 
+[node name="Skeleton" parent="character_duck/KayKit_AnimatedCharacter_v12/KayKit Animated Character" index="0"]
+bones/0/bound_children = [ NodePath("Body") ]
+bones/1/bound_children = [ NodePath("Head") ]
+bones/2/bound_children = [ NodePath("ArmLeft") ]
+bones/3/bound_children = [ NodePath("HandslotLeft") ]
+bones/4/bound_children = [ NodePath("ArmRight") ]
+bones/5/bound_children = [ NodePath("HandslotRight") ]
+
 [node name="Head" parent="character_duck/KayKit_AnimatedCharacter_v12/KayKit Animated Character/Skeleton" index="0"]
-transform = Transform( 1, 1.97589e-17, -1.00479e-18, -1.97666e-17, 0.995651, -0.093165, -8.40412e-19, 0.093165, 0.995651, 0, 0.711573, -0.00591883 )
+transform = Transform( 1, 1.97495e-17, -1.17958e-18, -1.97698e-17, 0.995161, -0.0982607, -7.66728e-19, 0.0982607, 0.995161, 0, 0.711443, -0.0148663 )
 
 [node name="Body" parent="character_duck/KayKit_AnimatedCharacter_v12/KayKit Animated Character/Skeleton" index="1"]
-transform = Transform( 1, 0, 0, 0, 0.999965, 0.00831765, 0, -0.00831765, 0.999965, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999782, 0.0208914, 0, -0.0208914, 0.999782, 0, 0, 0 )
 
 [node name="ArmLeft" parent="character_duck/KayKit_AnimatedCharacter_v12/KayKit Animated Character/Skeleton" index="2"]
-transform = Transform( 0.000708323, 0.490085, -0.871675, -0.00831013, -0.871642, -0.490073, -0.999965, 0.00759089, 0.00345516, 0.14, 0.691574, -0.00575247 )
+transform = Transform( 0.0017113, 0.51543, -0.85693, -0.0208484, -0.856727, -0.515349, -0.999781, 0.0187476, 0.00927967, 0.14, 0.691447, -0.0144485 )
 
 [node name="ArmRight" parent="character_duck/KayKit_AnimatedCharacter_v12/KayKit Animated Character/Skeleton" index="3"]
-transform = Transform( -0.00498042, -0.483038, -0.875585, -0.342271, -0.821887, 0.455361, -0.939588, 0.301955, -0.161237, -0.14, 0.691574, -0.00575247 )
+transform = Transform( -0.0117518, -0.497995, -0.867101, -0.353904, -0.80896, 0.4694, -0.935208, 0.312386, -0.166736, -0.14, 0.691447, -0.0144485 )
 
 [node name="HandslotLeft" parent="character_duck/KayKit_AnimatedCharacter_v12/KayKit Animated Character/Skeleton" index="4"]
-transform = Transform( -0.999786, -0.000708421, -0.0207002, -0.0207054, 0.0083105, 0.999751, -0.000536349, 0.999965, -0.00832337, 0.409998, 0.211367, -0.00157048 )
+transform = Transform( -0.998748, -0.00171141, -0.0500041, -0.0500288, 0.0208488, 0.99853, -0.000666508, 0.999781, -0.0209083, 0.423962, 0.219457, -0.00412 )
 
 [node name="HandslotRight" parent="character_duck/KayKit_AnimatedCharacter_v12/KayKit Animated Character/Skeleton" index="5"]
-transform = Transform( -0.975121, 0.213056, -0.0612074, 0.0150843, 0.33925, 0.940576, 0.22116, 0.916251, -0.334023, -0.406117, 0.238779, 0.160601 )
+transform = Transform( -0.97457, 0.219725, -0.0439811, 0.0358788, 0.346746, 0.937273, 0.221192, 0.91186, -0.345811, -0.414356, 0.245773, 0.157652 )
 
 [node name="SpringArm" type="SpringArm" parent="."]
 spring_length = 5.0

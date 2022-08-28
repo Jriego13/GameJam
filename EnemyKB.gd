@@ -32,5 +32,7 @@ func _on_Timer_timeout():
 
 
 func _on_Area_body_entered(body):
+	if body.has_method("takeDamage"):
+		body.takeDamage()
 	print("something entered")
 
